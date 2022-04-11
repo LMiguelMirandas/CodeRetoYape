@@ -1,0 +1,15 @@
+Listado de actividades
+
+- Se realiza test exploratorios
+- Se verifica posibles escenarios de prueba
+- Se realiza mapeo de objetos
+- Se genera pasos de prueba
+- Se realiza ejecuciónde pruebas
+
+Herramientas y tecnicas
+
+Herramienta:  IDE: Intellij 2021.3.3
+              Java:1.8
+	      MVN 3.8
+
+Tecnica: PageObjet con Serenity BDD

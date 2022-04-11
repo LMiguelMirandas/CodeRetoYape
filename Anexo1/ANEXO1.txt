@@ -1,0 +1,13 @@
+Listado de actividades
+
+- Crear un new colection para almacenar la información
+- Copiar las Urls, metodos, cabecera y parametros necesarios par aejecutar el servicio
+- Parametrizar el servicio a ejecutar 
+- Ingresar asersiones en cada servicio de verificación
+- generar escenarios de Prueba
+
+Herramientas y tecnicas
+
+Herramienta:  Se usa unicamente Postman para la ejecución de automatización,
+esta heramienta nos permiete verificar la funcionalidad ejecutando uno más test ram, de acuerdo a la necesidad.
+

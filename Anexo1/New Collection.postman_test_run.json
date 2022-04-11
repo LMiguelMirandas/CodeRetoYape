@@ -1,0 +1,340 @@
+{
+	"id": "a4176e81-3597-490f-a91e-ebb7e9b868a6",
+	"name": "New Collection",
+	"timestamp": "2022-04-10T04:55:42.896Z",
+	"collection_id": "7616596-0681db1d-6463-46af-afe9-4591a2cb41d5",
+	"folder_id": 0,
+	"environment_id": "7616596-b364ce74-8a2d-4b95-b85d-be3e52df9607",
+	"totalPass": 10,
+	"totalFail": 2,
+	"results": [
+		{
+			"id": "b02efd0a-1f19-49d4-9b79-ce87a369d5be",
+			"name": "Auth - CreateToken",
+			"url": "https://restful-booker.herokuapp.com/auth",
+			"time": 515,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verificar Respuesta 200": true
+			},
+			"testPassFailCounts": {
+				"Verificar Respuesta 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				515
+			],
+			"allTests": [
+				{
+					"Verificar Respuesta 200": true
+				}
+			]
+		},
+		{
+			"id": "b23b9407-31c5-4b86-a86d-67970d9d4f4e",
+			"name": "Booking - GetBookingIds",
+			"url": "https://restful-booker.herokuapp.com/booking",
+			"time": 126,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verificar Respuesta 200": true
+			},
+			"testPassFailCounts": {
+				"Verificar Respuesta 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				126
+			],
+			"allTests": [
+				{
+					"Verificar Respuesta 200": true
+				}
+			]
+		},
+		{
+			"id": "a23e169b-d7ae-4794-bc73-d2ad64f79f21",
+			"name": "Booking - GetBookingIds Completo",
+			"url": "https://restful-booker.herokuapp.com/booking?firstname=Jim&lastname=Wilson",
+			"time": 123,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verificar Resutados: ": true,
+				"Verificar Respuesta 200": true
+			},
+			"testPassFailCounts": {
+				"Verificar Resutados: ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verificar Respuesta 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				123
+			],
+			"allTests": [
+				{
+					"Verificar Resutados: ": true,
+					"Verificar Respuesta 200": true
+				}
+			]
+		},
+		{
+			"id": "7d21980c-b41e-4137-ada7-3ede31559de6",
+			"name": "Booking - GetBookingIds Copy",
+			"url": "https://restful-booker.herokuapp.com/booking?checkin=2019-03-18&checkout=2020-02-19",
+			"time": 129,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verificar Respuesta 200": true
+			},
+			"testPassFailCounts": {
+				"Verificar Respuesta 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				129
+			],
+			"allTests": [
+				{
+					"Verificar Respuesta 200": true
+				}
+			]
+		},
+		{
+			"id": "9432fcd7-f321-429b-b013-37357680499a",
+			"name": "Booking - GetBooking",
+			"url": "https://restful-booker.herokuapp.com/booking/5",
+			"time": 128,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verificar Resutados: ": false,
+				"Verificar Respuesta 200": true
+			},
+			"testPassFailCounts": {
+				"Verificar Resutados: ": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Verificar Respuesta 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				128
+			],
+			"allTests": [
+				{
+					"Verificar Resutados: ": false,
+					"Verificar Respuesta 200": true
+				}
+			]
+		},
+		{
+			"id": "02cde7ca-caca-4790-aff4-6d83c8bfa917",
+			"name": "Booking - CreateBooking",
+			"url": "https://restful-booker.herokuapp.com/booking",
+			"time": 131,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verificar Respuesta 200": true
+			},
+			"testPassFailCounts": {
+				"Verificar Respuesta 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				131
+			],
+			"allTests": [
+				{
+					"Verificar Respuesta 200": true
+				}
+			]
+		},
+		{
+			"id": "2e54478f-d1c8-4491-a841-c4f86d53b92b",
+			"name": "Booking - UpdateBooking",
+			"url": "https://restful-booker.herokuapp.com/booking/11",
+			"time": 126,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verificar Respuesta 200": true
+			},
+			"testPassFailCounts": {
+				"Verificar Respuesta 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				126
+			],
+			"allTests": [
+				{
+					"Verificar Respuesta 200": true
+				}
+			]
+		},
+		{
+			"id": "b1f1def5-0f26-4567-9988-5e5515e9fd29",
+			"name": "Booking - PartialUpdateBooking",
+			"url": "https://restful-booker.herokuapp.com/booking/5",
+			"time": 133,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verificar Respuesta 200": true
+			},
+			"testPassFailCounts": {
+				"Verificar Respuesta 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				133
+			],
+			"allTests": [
+				{
+					"Verificar Respuesta 200": true
+				}
+			]
+		},
+		{
+			"id": "05f2f575-f8db-4828-b366-013c7f80990e",
+			"name": "Booking - DeleteBooking",
+			"url": "https://restful-booker.herokuapp.com/booking/2",
+			"time": 123,
+			"responseCode": {
+				"code": 405,
+				"name": "Method Not Allowed"
+			},
+			"tests": {
+				"Verificar Respuesta 200": false
+			},
+			"testPassFailCounts": {
+				"Verificar Respuesta 200": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				123
+			],
+			"allTests": [
+				{
+					"Verificar Respuesta 200": false
+				}
+			]
+		},
+		{
+			"id": "177a3c51-e122-4a54-b3c6-d407ca88c813",
+			"name": "Ping - HealthCheck",
+			"url": "https://restful-booker.herokuapp.com/ping",
+			"time": 123,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Verificar Respuesta 200": true
+			},
+			"testPassFailCounts": {
+				"Verificar Respuesta 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				123
+			],
+			"allTests": [
+				{
+					"Verificar Respuesta 200": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 1657,
+	"collection": {
+		"requests": [
+			{
+				"id": "b02efd0a-1f19-49d4-9b79-ce87a369d5be",
+				"method": "POST"
+			},
+			{
+				"id": "b23b9407-31c5-4b86-a86d-67970d9d4f4e",
+				"method": "GET"
+			},
+			{
+				"id": "a23e169b-d7ae-4794-bc73-d2ad64f79f21",
+				"method": "GET"
+			},
+			{
+				"id": "7d21980c-b41e-4137-ada7-3ede31559de6",
+				"method": "GET"
+			},
+			{
+				"id": "9432fcd7-f321-429b-b013-37357680499a",
+				"method": "GET"
+			},
+			{
+				"id": "02cde7ca-caca-4790-aff4-6d83c8bfa917",
+				"method": "POST"
+			},
+			{
+				"id": "2e54478f-d1c8-4491-a841-c4f86d53b92b",
+				"method": "PUT"
+			},
+			{
+				"id": "b1f1def5-0f26-4567-9988-5e5515e9fd29",
+				"method": "PATCH"
+			},
+			{
+				"id": "05f2f575-f8db-4828-b366-013c7f80990e",
+				"method": "DELETE"
+			},
+			{
+				"id": "177a3c51-e122-4a54-b3c6-d407ca88c813",
+				"method": "GET"
+			}
+		]
+	}
+}
