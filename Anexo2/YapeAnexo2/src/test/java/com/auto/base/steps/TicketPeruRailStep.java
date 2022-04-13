@@ -31,19 +31,20 @@ public class TicketPeruRailStep {
     public void selectFecRetorno(String strFecRetorno) throws ParseException { ticketPeruRailPage.selectFecRetorno(strFecRetorno);
     }
     public void selectBtnBuscar(){ ticketPeruRailPage.selectBtnBuscar();
-        Assert.assertEquals(true ,ticketPeruRailPage.verificarCarga());
+       // Assert.assertEquals(true ,ticketPeruRailPage.verificarCarga());
     }
     public void selectBoletos(){ ticketPeruRailPage.selectBoletos();
     }
-    public void selectBtnContinuar(){ ticketPeruRailPage.selectBtnContinuar();
+    public void selectBtnContinuar() throws InterruptedException { ticketPeruRailPage.selectBtnContinuar();
         Assert.assertEquals(true ,ticketPeruRailPage.verificarCargaPasajero());
     }
     public void sendInfPasajeros(){ ticketPeruRailPage.sendInfPasajeros();
     }
     public void selectBtnContinuarPago(){ ticketPeruRailPage.selectBtnContinuarPago();
-        Assert.assertEquals(true ,ticketPeruRailPage.validaPayment());
+      //
     }
     public void validaMontoPago(){
+        Assert.assertEquals(true ,ticketPeruRailPage.validaPayment());
         Assert.assertEquals(true ,ticketPeruRailPage.validaSubTotal1());
         Assert.assertEquals(true ,ticketPeruRailPage.validaSubTotal2());
         Assert.assertEquals(true ,ticketPeruRailPage.validaTotalDol());
