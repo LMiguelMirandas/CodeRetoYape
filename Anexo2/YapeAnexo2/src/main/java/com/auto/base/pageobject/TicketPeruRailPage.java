@@ -2,10 +2,11 @@ package com.auto.base.pageobject;
 
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
-import org.junit.Assert;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -52,13 +53,13 @@ public class TicketPeruRailPage extends PageObject {
     public WebElement imgCargaIda;
 
 
-    @FindBy(id = "div_2020020946_12")
+    @FindBy(id = "div_2021010535_10")
     public WebElement btnBuscarBoleto;
-    @FindBy(xpath = "//*[@id='div_2020020946_12']/div[4]/div")
+    @FindBy(xpath = "//*[@id='div_2021010535_10']/div[6]/div")
     public WebElement lblCostoBoleto;
-    @FindBy(id = "div_2020021921_13")
+    @FindBy(id = "div_2021021605_11")
     public WebElement btnBuscarBoleto2;
-    @FindBy(xpath = "//*[@id='div_2020021921_13']/div[5]")
+    @FindBy(xpath = "//*[@id='div_2021021605_11']/div[6]")
     public WebElement lblCostoBoleto2;
     @FindBy(xpath = "//*[@id='formTrenSeleccionar']/div/div/input")
     public WebElement btnContinuar;
@@ -97,20 +98,34 @@ public class TicketPeruRailPage extends PageObject {
     public WebElement txtConfirEmail2;
 
 
+    @FindBy(id = "enviarPago")
+    public WebElement btnEnviarPago;
+    @FindBy(id = "compra") //*[@id="compra"]
+    public WebElement txtPayment;
+
+    @FindBy(xpath = "//*[@id='compra']/div/div[2]/div[5]/span")
+    public WebElement txtSubTotal1;
+    @FindBy(xpath = "//*[@id='compra']/div/div[3]/div[5]/span")
+    public WebElement txtSubTotal2;
+    @FindBy(xpath = "//*[@id='compra']/div/div[4]/div[1]/div[2]/span")
+    public WebElement txtTotalSol;
+    @FindBy(xpath = "//*[@id='compra']/div/div[4]/div[1]/div[1]/span[2]")
+    public WebElement txtTotalDol;
+
     public void SelectDestino(String strDestino) {
         cbxDestino.click();
-        find(By.xpath("//*[@id='destinoSelect']/option[text()='"+strDestino+"'")).click();
+        find(By.xpath("//*[@id='destinoSelect']/option[text()="+strDestino+"]")).click();
     }
     public void SelectRuta(String strRuta) {
         cbxRuta.click();
-        find(By.xpath("//*[@id='rutaSelect']/option[text()='"+strRuta+"'")).click();
+        find(By.xpath("//*[@id='rutaSelect']/option[text()="+strRuta+"]")).click();
     }
 
     public void selectTren(String strTren) {
         if ( !strTren.trim().equals("Ignore")) {
             strVarTren=strTren;
             cbxTren.click();
-            find(By.xpath("//*[@id='cbTrenSelect']"+"/option[text()='"+strTren+"']")).click();
+            find(By.xpath("//*[@id='cbTrenSelect']"+"/option[text()="+strTren+"]")).click();
         }
 
     }
@@ -123,14 +138,14 @@ public class TicketPeruRailPage extends PageObject {
 
     public void selectFecSalida(String strFecSalida) throws ParseException {
 
-        String date_dd_MM_yyyy[] = (strFecSalida.split(" ")[0]).split("/");
+        String[] date_dd_MM_yyyy = strFecSalida.split("/");
 
         btnFecSalida.click();
 
         DateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-        Date date = new Date();
+      //  Date date = new Date();
         dateSalida = formato.parse(strFecSalida);
-
+/*
         difA = dateSalida.getYear()- date.getYear();
         difM = difA * 12 + dateSalida.getMonth() - date.getMonth();
 
@@ -142,8 +157,8 @@ public class TicketPeruRailPage extends PageObject {
         for (int i = 0; i < difM; i++){
             btnSiguienteFec.click();
         }
-
-        Integer intMes = Integer.parseInt(date_dd_MM_yyyy[1]);
+*/
+        int intMes = Integer.parseInt(date_dd_MM_yyyy[1]);
         intMes=intMes-1;
 
         find(By.xpath("//td[contains(@data-month,"+intMes+")]/*[contains(text(),"+date_dd_MM_yyyy[0]+")]")).click();
@@ -157,18 +172,18 @@ public class TicketPeruRailPage extends PageObject {
 
             btnFecRetorno.click();
 
-            String date_dd_MM_yyyyR[] = (strFecRetorno.split(" ")[0]).split("/");
-            DateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-            Date dateRetorno = formato.parse(strFecRetorno);
+            String[] date_dd_MM_yyyyR = strFecRetorno.split("/");
+            //DateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+            //Date dateRetorno = formato.parse(strFecRetorno);
 
-            int difA1 = dateRetorno.getYear() - dateSalida.getYear();
+         /*   int difA1 = dateRetorno.getYear() - dateSalida.getYear();
             int difM1 = difA * 12 + dateRetorno.getMonth() - dateSalida.getMonth();
 
             for (int i = 0; i < difM; i++) {
                 btnSiguienteFec.click();
             }
-
-            Integer intMes1 = Integer.parseInt(date_dd_MM_yyyyR[1]);
+*/
+            int intMes1 = Integer.parseInt(date_dd_MM_yyyyR[1]);
             intMes1 = intMes1 - 1;
 
             find(By.xpath("//td[contains(@data-month," + intMes1 + ")]/*[contains(text()," + date_dd_MM_yyyyR[0] + ")]")).click();
@@ -181,6 +196,7 @@ public class TicketPeruRailPage extends PageObject {
         }
     public boolean verificarCarga() {
         waitFor(imgCargaIda);
+
         boolean status = imgCargaIda.isDisplayed();
         return status;
     }
@@ -191,14 +207,14 @@ public class TicketPeruRailPage extends PageObject {
         btnBuscarBoleto.click();
         String strCosto1=lblCostoBoleto.getText();
 
-        String precio[] = strCosto1.split("\n");
+        String[] precio = strCosto1.split("\n");
         GlobalVals.Dolares1= Double.parseDouble(precio[0].substring(3).trim());
         GlobalVals.Soles1=Double.parseDouble(precio[1].substring(2).trim());
 
         btnBuscarBoleto2.click();
         String strCosto2=lblCostoBoleto2.getText();
 
-        String precio2[] = strCosto2.split("\n");
+        String[] precio2 = strCosto2.split("\n");
         GlobalVals.Dolares2=Double.parseDouble(precio2[0].substring(3).trim());
         GlobalVals.Soles2=Double.parseDouble(precio2[1].substring(2).trim());
 
@@ -209,8 +225,10 @@ public class TicketPeruRailPage extends PageObject {
     public void selectBtnContinuar() {
         btnContinuar.click();
     }
-    public boolean verificarCargaPasajero() {
+    public boolean verificarCargaPasajero() throws InterruptedException {
+
         waitFor(lblSiguientePasajero);
+
         boolean status = lblSiguientePasajero.isDisplayed();
         return status;
     }
@@ -257,7 +275,7 @@ public class TicketPeruRailPage extends PageObject {
 
         find(By.xpath("//*[@id='calendario_anio']"+"/option[text()='"+anioNacimiento+"']")).click();
         find(By.xpath("//*[@id='calendario_mes']"+"/option[text()='"+mesNacimiento+"']")).click();
-        find(By.xpath("//*[contains(@href,'"+diaNcimiento+"')]")).click();
+        find(By.xpath("//*[@id='tlb_calendario']//a[text()="+diaNcimiento+"]")).click();
         find(By.xpath("//*[@id='formPasajero1-idPais']"+"/option[text()='"+Pais+"']")).click();
         find(By.xpath("//*[@id='formPasajero1-idDocumentoIdentidad']"+"/option[text()='Identification Card']")).click();
 
@@ -279,7 +297,7 @@ public class TicketPeruRailPage extends PageObject {
         formFecNacimiento2.click();
         find(By.xpath("//*[@id='calendario_anio']"+"/option[text()='1995']")).click();
         find(By.xpath("//*[@id='calendario_mes']"+"/option[text()='MARCH']")).click();
-        find(By.xpath("//*[contains(@href,'1')]")).click();
+        find(By.xpath("//*[@id='tlb_calendario']//a[text()='2']")).click();
         find(By.xpath("//*[@id='formPasajero2-idPais']"+"/option[text()='Peru']")).click();
         find(By.xpath("//*[@id='formPasajero2-idDocumentoIdentidad']"+"/option[text()='Identification Card']")).click();
         txtNumDocIdentidad2.sendKeys("45869578");
@@ -291,10 +309,6 @@ public class TicketPeruRailPage extends PageObject {
 
     }
 
-    @FindBy(id = "enviarPago")
-    public WebElement btnEnviarPago;
-    @FindBy(id = "text_form_submit_payment")
-    public WebElement txtPayment;
 
     public void selectBtnContinuarPago(){
         btnEnviarPago.click();
@@ -306,18 +320,9 @@ public class TicketPeruRailPage extends PageObject {
         return txtPayment.isDisplayed();
     }
 
-    @FindBy(xpath = "//*[@id='compra']/div/div[2]/div[5]/span")
-    public WebElement txtSubTotal1;
-    @FindBy(xpath = "//*[@id='compra']/div/div[3]/div[5]/span")
-    public WebElement txtSubTotal2;
-    @FindBy(xpath = "//*[@id='compra']/div/div[4]/div[1]/div[2]/span")
-    public WebElement txtTotalSol;
-    @FindBy(xpath = "//*[@id='compra']/div/div[4]/div[1]/div[1]/span[2]")
-    public WebElement txtTotalDol;
-
-
 
     public String getSubtTotal1(){
+        waitFor(txtSubTotal1);
         return txtSubTotal1.getText();
     }
     public String getSubtTotal2(){
