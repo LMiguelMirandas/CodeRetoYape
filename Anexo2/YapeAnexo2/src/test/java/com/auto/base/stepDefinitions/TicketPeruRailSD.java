@@ -54,7 +54,7 @@ public class TicketPeruRailSD {
     }
 
     @Y("^selecciona boton 'Continuar'")
-    public void seleccionaBtnContinuar() {
+    public void seleccionaBtnContinuar() throws InterruptedException {
         ticketPeruRailStep.selectBtnContinuar();
     }
 
